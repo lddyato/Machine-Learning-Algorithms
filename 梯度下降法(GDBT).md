@@ -9,7 +9,7 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 <script type="text/javascript" src="http://chart.googleapis.com/chart?cht=tx&chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})"></script>
 
 
-           $$J(θ0,θ1...,θn)=12m∑i=0m(hθ(x0,x1,...xn)−yi)2$$
+           $J(θ_0,θ_1...,θ_n)=12m∑i=0_m*(hθ(x_0,x_1,...x_n)−y_i)2$
 
 
 

@@ -1,4 +1,4 @@
-```{echo=FALSE}
+```{java, echo=FALSE}
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 ```
 # 梯度下降法

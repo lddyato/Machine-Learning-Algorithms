@@ -2,6 +2,8 @@
 
 <script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script> <script type="text/javascript">var currentBlogApp = 'pinard', cb_enable_mathjax=true;var isLogined=false;</script> <script src="/bundles/blog-common.js?v=wUUQbLTt-LocHM-6RVSAUwAYdrfA1Lt3ool1ZdiICfI1" type="text/javascript"></script>
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。这里就对梯度下降法做一个完整的总结。</p>
 <h1>1. 梯度</h1>
 <p>　　　　在微积分里面，对多元函数的参数求∂偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。比如函数f(x,y), 分别对x,y求偏导数，求得的梯度向量就是(∂f/∂x,&nbsp;∂f/∂y)<sup>T</sup>,简称grad f(x,y)或者▽f(x,y)。对于在点(x<sub>0</sub>,y<sub>0</sub>)的具体梯度向量就是(∂f/∂x<sub>0</sub>,&nbsp;∂f/∂y<sub>0</sub>)<sup>T</sup>.或者▽f(x<sub>0</sub>,y<sub>0</sub>)，如果是3个参数的向量梯度，就是(∂f/∂x,&nbsp;∂f/∂y，∂f/∂z)<sup>T</sup>,以此类推。</p>
@@ -22,7 +24,7 @@
 <p>　　　　2.特征（feature）：指的是样本中输入部分，比如样本（x<sub>0</sub>,y<sub>0</sub>）,（x<sub>1</sub>,y<sub>1</sub>）,则样本特征为x，样本输出为y。</p>
 <p>　　　　3. 假设函数（hypothesis function）：在监督学习中，为了拟合输入样本，而使用的假设函数，记为h<sub>θ</sub>(x)。比如对于样本（x<sub>i</sub>,y<sub>i</sub>）(i=1,2,...n),可以采用拟合函数如下：&nbsp;h<sub>θ</sub>(x) =&nbsp;θ<sub>0</sub>+θ<sub>1</sub>x。</p>
 <p>　　　　4. 损失函数（loss function）：为了评估模型拟合的好坏，通常用损失函数来度量拟合的程度。损失函数极小化，意味着拟合程度最好，对应的模型参数即为最优参数。在线性回归中，损失函数通常为样本输出和假设函数的差取平方。比如对于样本（x<sub>i</sub>,y<sub>i</sub>）(i=1,2,...n),采用线性回归，损失函数为：</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\(J(\theta_0, \theta_1) = \sum\limits_{i=1}^{m}(h_\theta(x_i) - y_i)^2\)</p>
+$$J(\theta_0, \theta_1) = \sum\limits\_{i=1}^{m}(h\_\theta(x_i) - y_i)^2\)$$
 <p>&nbsp;　　　　其中\(x_i\)表示样本特征x的第i个元素，\(y_i\)表示样本输出y的第i个元素，\(h_\theta(x_i)\)为假设函数。&nbsp;&nbsp;&nbsp;</p>
 <h2>3.3&nbsp;梯度下降的详细算法</h2>
 <p>　　　　梯度下降法的算法可以有代数法和矩阵法（也称向量法）两种表示，如果对矩阵分析不熟悉，则代数法更加容易理解。不过矩阵法更加的简洁，且由于使用了矩阵，实现逻辑更加的一目了然。这里先介绍代数法，后介绍矩阵法。</p>

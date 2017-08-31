@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。
 最小二乘法是直接对\Delta求导找出全局最小，是非迭代法。而梯度下降法是一种迭代法，先给定一个\beta ，然后向\Delta下降最快的方向调整\beta ，在若干次迭代之后找到局部最小。梯度下降法的缺点是到最小点的时候收敛速度变慢，并且对初始点的选择极为敏感，其改进大多是在这两方面下功夫。
 
@@ -105,4 +105,4 @@
 # References
 1. https://www.analyticsvidhya.com/blog/2017/03/introduction-to-gradient-descent-algorithm-along-its-variants/
 2. http://www.cnblogs.com/pinard/p/5970503.html
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
